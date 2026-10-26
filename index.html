@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minha Pokédex</title>
+
+    <!-- * Normalização dos estilos entre navegadores -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+
+    <!-- Fonte utilizada na aplicação -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Estilos da aplicação -->
+    <link rel="stylesheet" href="./assets/css/global.css" />
+    <link rel="stylesheet" href="./assets/css/pokedex.css" />
+  </head>
+
+  <body>
+    <main class="content">
+      <header class="pokedex-header">
+        <h1 class="pokedex-title">Minha <span>Pokédex</span></h1>
+        <p class="pokedex-subtitle">
+          Explore e descubra seus Pokémon favoritos
+        </p>
+      </header>
+
+      <!-- * Os Pokémon serão adicionados aqui pelo JavaScript -->
+      <ol id="listaPokemons" class="pokemons"></ol>
+
+      <div class="pagination">
+        <button id="botaoCarregarMais" type="button">Carregar mais</button>
+      </div>
+    </main>
+
+    <!-- !
+        A ordem importa: primeiro o modelo, depois a API
+        e por último o arquivo principal.
+    -->
+    <script src="./assets/js/pokemon-model.js"></script>
+    <script src="./assets/js/poke-api.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

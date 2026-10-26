@@ -1,0 +1,235 @@
+
+/* * Organização dos cards */
+
+.pokemons {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* * Cores dos tipos */
+
+.normal { background-color: #a6a877; }
+.grass { background-color: #77c850; }
+.fire { background-color: #ee7f30; }
+.water { background-color: #678fee; }
+.electric { background-color: #f7cf2e; }
+.ice { background-color: #98d5d7; }
+.ground { background-color: #dfbf69; }
+.flying { background-color: #a98ff0; }
+.poison { background-color: #a040a0; }
+.fighting { background-color: #bf3029; }
+.psychic { background-color: #f65687; }
+.dark { background-color: #725847; }
+.rock { background-color: #b8a137; }
+.bug { background-color: #a8b720; }
+.ghost { background-color: #6e5896; }
+.steel { background-color: #b9b7cf; }
+.dragon { background-color: #6f38f6; }
+.fairy { background-color: #f9aec7; }
+
+/* * Card principal */
+
+.pokemon {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    margin: .5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: transform .2s ease;
+}
+
+.pokemon:hover {
+    transform: translateY(-4px);
+}
+
+.pokemon-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+}
+
+.pokemon .name {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    overflow-wrap: anywhere;
+}
+
+.pokemon .number {
+    color: #000;
+    opacity: .35;
+    font-size: .7rem;
+}
+
+/* * Imagem e tipos */
+
+.pokemon .detail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 90px;
+}
+
+.pokemon .detail .types {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.pokemon .detail .types .type {
+    color: #fff;
+    padding: .25rem .5rem;
+    margin: .25rem 0;
+    font-size: .625rem;
+    border-radius: 1rem;
+    filter: brightness(1.1);
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.pokemon .detail img {
+    width: 100px;
+    max-width: 65%;
+    height: 100px;
+    object-fit: contain;
+}
+
+/* * Atributos principais */
+
+.pokemon-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .5rem;
+    padding-top: .75rem;
+    border-top: 1px solid rgba(255, 255, 255, .35);
+}
+
+.pokemon-stats .stat {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    padding: .6rem;
+    background-color: rgba(255, 255, 255, .15);
+    border-radius: .5rem;
+    color: #fff;
+}
+
+.pokemon-stats .stat span {
+    font-size: .7rem;
+}
+
+.pokemon-stats .stat strong {
+    font-size: 1.2rem;
+}
+
+/* * Altura e peso */
+
+.pokemon-physical {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: .5rem;
+    color: #fff;
+    font-size: .7rem;
+}
+
+/* * Paginação */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.pagination button {
+    padding: .5rem 1rem;
+    margin: .25rem 0;
+    font-size: .875rem;
+    color: #fff;
+    background-color: #6c79db;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #5362ce;
+}
+
+.pagination button:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+
+/* * Cabeçalho principal da minha Pokédex */
+
+.pokedex-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    padding: 1.5rem 1rem 2rem;
+    text-align: center;
+}
+
+.pokedex-title {
+    margin: 0;
+    color: #263238;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -1.5px;
+}
+
+/* * Destaque na palavra Pokédex */
+.pokedex-title span {
+    color: #ef5350;
+}
+
+.pokedex-title::after {
+    content: '';
+    display: block;
+    width: 65px;
+    height: 4px;
+    margin: .75rem auto 0;
+    background-color: #ef5350;
+    border-radius: 1rem;
+}
+
+.pokedex-subtitle {
+    margin: .5rem 0 0;
+    color: #78909c;
+    font-size: .9rem;
+    font-weight: 400;
+}
+
+
+
+/* * Responsividade */
+
+@media screen and (min-width: 380px) {
+    .pokemons {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .pokemons {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .pokemons {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
